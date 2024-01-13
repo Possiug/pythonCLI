@@ -15,7 +15,9 @@ function addCommand(name, description, argsAmount, functionToExecute) - add new 
 
 function mainLoop() - start your CLI
 
-command help - is builtin and contains all added commands
+command 'help' - is builtin and contains all added commands
+
+command 'exit' - is builtin and stops your CLI but not all programm
 
 Examples:
 -----------

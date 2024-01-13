@@ -5,6 +5,7 @@ class CLI:
         self.commands = {}
         self.commands.keys
         self.addCommand('help','show all commands', 0, self.help)
+        self.addCommand('exit','exit',0, self.leave)
 
     def addCommand(self, name: str, description: str, argsAmount: int, func: any):
         self.commands[name] = {'args':argsAmount, 'function':func, 'description':description}
@@ -13,7 +14,8 @@ class CLI:
         if(self.commands.get(cmd) == None):
             return False
         return True
-    
+    def leave(self):
+        raise KeyboardInterrupt()
     def help(self):
         print("------------------------CLI-----------------------")
         print("                  Made by Possiug!                ")
@@ -24,6 +26,7 @@ class CLI:
             print(f"\t{keys[i]} - args amount: {values[i]['args']} - {values[i]['description']}")
 
     def cmdProc(self, cmd: str):
+        
         cmd = cmd.split(' ')
         if(not self.hasCommand(cmd[0])):
             print('command not found!')
