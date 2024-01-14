@@ -1,3 +1,4 @@
+# v1.0
 class CLI:
     def __init__(self, startSymb, bye):
         self.byeMsg = bye
